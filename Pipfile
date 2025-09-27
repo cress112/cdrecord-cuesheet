@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+soundfile = "*"
+pyloudnorm = "*"
+numpy = "*"
+pydantic = "*"
+
+[dev-packages]
+ruff = "*"
+ipython = "*"
+
+[requires]
+python_version = "3.13"
+python_full_version = "3.13.7"
+
+[scripts]
+start = "python -m scripts.loudness_normalizer"
+lint = "ruff check . --fix"
+format = "ruff format ."

@@ -3,9 +3,13 @@
 ### * convert files in $1/* to $2/*.wav
 
 ### check arg1, arg2 is dir
-if [ ! -d "$1" ] && [ ! -d "$2" ]; then
-    echo "invalid directories: $1, $2"
+if [ ! -e "$1" ] && [ ! -d "$1" ]; then
+    echo "$1 does not exist"
     exit 1
+fi
+if [ ! -e "$2" ]; then
+    echo "$2 does not exist, creating..."
+    mkdir -p "$2"
 fi
 
 ### convert audio files into wav (PCM quality)
