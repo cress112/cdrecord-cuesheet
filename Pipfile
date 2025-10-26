@@ -18,6 +18,7 @@ python_version = "3.13"
 python_full_version = "3.13.7"
 
 [scripts]
-start = "python -m scripts.loudness_normalizer"
+normalize = "python -m scripts.loudness_normalizer"
+shift = "python -m scripts.pitch_shifter"
 lint = "ruff check . --fix"
 format = "ruff format ."

@@ -1,4 +1,5 @@
-# OS files
+# OS files, cache
+__pycache__
 .DS_Store
 
 # music files
@@ -10,3 +11,6 @@
 # private cuesheets
 albams/
 bests/
+
+# temp files
+tmp*

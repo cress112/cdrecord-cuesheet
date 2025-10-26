@@ -9,7 +9,7 @@ from scripts.config import AudioFormatConfig
 
 class EditAudioFileService:
 
-    NORMALIZED_RANGE = 0.95
+    NORMALIZED_RANGE = AudioFormatConfig.NORMALIZED_RANGE
     OUTPUT_SUBTYPE = AudioFormatConfig.OUTPUT_SUBTYPE
 
     @classmethod
