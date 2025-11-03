@@ -6,4 +6,12 @@ from scripts.libraries.loudness_calculator import LoudnessCalculator
 from scripts.libraries.file_system import FileSystem
 from scripts.libraries.audio_calculator import AudioCalculator
 
-__all__ = ("Logger", "AudioReader", "AudioWriter", "LoudnessArranger", "LoudnessCalculator", "FileSystem", "AudioCalculator")
+__all__ = (
+    "Logger",
+    "AudioReader",
+    "AudioWriter",
+    "LoudnessArranger",
+    "LoudnessCalculator",
+    "FileSystem",
+    "AudioCalculator",
+)

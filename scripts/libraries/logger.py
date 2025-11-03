@@ -16,7 +16,7 @@ class Logger:
     )
     LOG_LEVEL_ORDER_INDEX = LOG_LEVEL_ORDER.index(CommonConfig.LOG_LEVEL)
 
-    def __init__(self, context: Optional[str]= None) -> None:
+    def __init__(self, context: Optional[str] = None) -> None:
         self.__context = context or Logger.DEFAULT_CONTEXT
 
     def error(self, *args: Any):

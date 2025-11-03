@@ -14,7 +14,7 @@ class CommonConfig:
     def validate(cls) -> None:
         args = sys.argv[1:]
         if len(args) != 2:
-            raise Exception(f"実行引数は2つ！")
+            raise Exception("実行引数は2つ！")
         cls.INPUT_DIR = args[0]
         cls.OUTPUT_DIR = args[1]
 

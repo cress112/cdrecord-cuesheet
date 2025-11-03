@@ -5,8 +5,7 @@ from scripts.models import AudioAmplitudeModel
 
 
 class AudioFilePathService:
-
-    AUDIO_FILE_PATTERN = re.compile(r'^.*\.(wav|WAV)$')
+    AUDIO_FILE_PATTERN = re.compile(r"^.*\.(wav|WAV)$")
 
     @classmethod
     def initialize(cls) -> None:
@@ -25,12 +24,21 @@ class AudioFilePathService:
         AudioFilePathService.__initialize_output_dir(output_dir_name)
         ret: list[AudioAmplitudeModel] = []
         for input_file_path in FileSystem.list_dir(input_dir_name):
-            if AudioFilePathService.AUDIO_FILE_PATTERN.fullmatch(input_file_path) is not None:
-                output_file_path = FileSystem.replace_path(input_file_path, output_dir_name)
-                ret.append(AudioAmplitudeModel(input_file_path=input_file_path, output_file_path=output_file_path))
+            if (
+                AudioFilePathService.AUDIO_FILE_PATTERN.fullmatch(input_file_path)
+                is not None
+            ):
+                output_file_path = FileSystem.replace_path(
+                    input_file_path, output_dir_name
+                )
+                ret.append(
+                    AudioAmplitudeModel(
+                        input_file_path=input_file_path,
+                        output_file_path=output_file_path,
+                    )
+                )
 
         return ret
-
 
     @staticmethod
     def __initialize_output_dir(dir_path: str) -> None:
@@ -38,5 +46,6 @@ class AudioFilePathService:
             FileSystem.mkdir_recursively(dir_path)
         if not FileSystem.is_dir(dir_path):
             raise Exception(f"出力ディレクトリの指定がおかしいよ！: {dir_path}")
+
 
 AudioFilePathService.initialize()

@@ -1,8 +1,8 @@
 import numpy
 import soundfile
 
-class AudioReader:
 
+class AudioReader:
     READ_DTYPE = numpy.float64.__name__
 
     @staticmethod
@@ -11,4 +11,10 @@ class AudioReader:
 
     @staticmethod
     def read_data(file_name: str) -> numpy.ndarray:
-        return soundfile.read(file_name, dtype=AudioReader.READ_DTYPE)[0]
+        """
+        音声データを2次元配列として返す
+        Shape: ( int, 2 )
+        """
+        return soundfile.read(file_name, dtype=AudioReader.READ_DTYPE, always_2d=True)[
+            0
+        ]

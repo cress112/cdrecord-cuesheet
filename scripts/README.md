@@ -23,3 +23,10 @@ pipenv run normalize wavs normalized
 ```sh
 pipenv run shift <target_wav_file> <shift_width: +/-(int)>
 ```
+
+### show total duration
+- exec
+```sh
+scripts/show_total_duration.sh <dir_contains_wav_files>
+scripts/show_total_duration.sh ./files
+```

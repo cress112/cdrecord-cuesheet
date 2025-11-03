@@ -1,8 +1,8 @@
 import pathlib
 from typing import Generator
 
-class FileSystem:
 
+class FileSystem:
     @staticmethod
     def check_existance(path: str) -> bool:
         return pathlib.Path(path).exists()
