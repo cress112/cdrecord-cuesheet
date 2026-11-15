@@ -1,0 +1,14 @@
+[project]
+name = "20250614-cdrtools"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ipython>=9.15.0",
+    "numpy>=2.5.0",
+    "pydantic>=2.13.4",
+    "pyloudnorm>=0.2.0",
+    "ruff>=0.15.20",
+    "soundfile>=0.14.0",
+]

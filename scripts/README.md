@@ -1,7 +1,7 @@
 # Helper Scripts
 - convert audio files to PCM quality and normalize loudness in one-liner
 ```sh
-scripts/convert_to_wav.sh files wavs && pipenv run normalize wavs normalized && rm -rf wavs
+scripts/convert_to_wav.sh files wavs && uv run --env-file .env python -m scripts.loudness_normalizer wavs normalized && rm -rf wavs
 ```
 ### convert files to WAV
 - place audio files into a directory
@@ -14,14 +14,14 @@ scripts/convert_to_wav.sh files wavs
 - place audio files(.wav) into a directory
 - exec
 ```sh
-pipenv run normalize <input_dir_contains_audio_files> <output_dir>
-pipenv run normalize wavs normalized
+uv run --env-file .env python -m scripts.loudness_normalizer <input_dir_contains_audio_files> <output_dir>
+uv run --env-file .env python -m scripts.loudness_normalizer wavs normalized
 ```
 
 ### shift pitch
 - exec
 ```sh
-pipenv run shift <target_wav_file> <shift_width: +/-(int)>
+uv run --env-file .env python -m scripts.pitch_shifter <target_wav_file> <shift_width: +/-(int)>
 ```
 
 ### show total duration
